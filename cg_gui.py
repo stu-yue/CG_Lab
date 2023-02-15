@@ -19,7 +19,7 @@ RESOURCE_DIR = "./resources/"               # 资源目录
 CWD = os.getcwd()                           # 获取当前工作目录路径
 FONT = QFont("YouYuan", 12,)                # 字体
 MAX_NUM_CONTROL_POINTS = 6                  # 最大控制点个数
-HELP_FILE = 'https://github.com/stu-yue'
+HELP_FILE = 'https://github.com/stu-yue/CG_Lab'
 
 
 class MyCanvas(QGraphicsView):
