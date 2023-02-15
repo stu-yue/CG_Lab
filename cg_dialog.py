@@ -12,25 +12,25 @@ class CGResetDialog(QDialog):
     自定义重置对话框类，继承QDialog类
     """  
 
-    def __init__(self, maxWidth=600, maxHeight=600):
+    def __init__(self, maxWidth=400, maxHeight=500):
         super().__init__()
         self.max_width = maxWidth
         self.max_height = maxHeight
-        self.setWindowIcon(QIcon(root + "ImageIcon/paintIcon4.png"))
+        self.setWindowIcon(QIcon(root + "resources/paintIcon4.png"))
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle("重置画布")      # 窗口标题
-        self.setFixedSize(850, 450)         # 固定
+        self.setFixedSize(450, 300)         # 固定
         self.lab_a = QLabel('水平(H, 像素):', self)
         self.lab_b = QLabel('垂直(V, 像素):', self)
         self.lab_c = QLabel(self)
-        self.lab_c.setFixedSize(130, 140)
-        self.lab_c.setPixmap(QPixmap('gui_files/ImageIcon/horizen.png'))
+        self.lab_c.setFixedSize(100, 100)
+        self.lab_c.setPixmap(QPixmap('resources/horizen.png'))
         self.lab_c.setScaledContents(True)
         self.lab_d = QLabel(self)
-        self.lab_d.setFixedSize(130, 140)
-        self.lab_d.setPixmap(QPixmap('gui_files/ImageIcon/vertical.png'))
+        self.lab_d.setFixedSize(100, 100)
+        self.lab_d.setPixmap(QPixmap('resources/vertical.png'))
         self.lab_d.setScaledContents(True)
  
         self.horizen_edit = QLineEdit()      # 用于接收水平大小

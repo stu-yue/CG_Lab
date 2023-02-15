@@ -13,10 +13,14 @@ import webbrowser
 warnings.filterwarnings('ignore')
 
 # 全局设置
-CWD = os.getcwd()                   # 获取当前工作目录路径
-FONT = QFont("YouYuan", 12,)        # 字体
-MAX_NUM_CONTROL_POINTS = 6          # 最大控制点个数
+MAINWINDOW_W = 1000                         # 主窗体的宽
+MAINWINDOW_H = 800                          # 主窗体的高
+RESOURCE_DIR = "./resources/"               # 资源目录
+CWD = os.getcwd()                           # 获取当前工作目录路径
+FONT = QFont("YouYuan", 12,)                # 字体
+MAX_NUM_CONTROL_POINTS = 6                  # 最大控制点个数
 HELP_FILE = 'https://github.com/stu-yue'
+
 
 class MyCanvas(QGraphicsView):
     """
@@ -436,12 +440,6 @@ class MyGraphicsScene(QGraphicsScene):
             painter.drawLine(i, top, i, bottom)
 
 
-# 主窗体的宽与高
-MAINWINDOW_W = 1000
-MAINWINDOW_H = 800
-
-# 资源目录
-RESOURCE_DIR = "./resources/"
 
 class MainWindow(QMainWindow):
     """
@@ -597,7 +595,7 @@ class MainWindow(QMainWindow):
         self.canvas_widget.set_width(int(new_width))
 
     def reset_canvas_action(self):
-        dialog = CGResetDialog(maxWidth=self.DEFAULT_W, maxHeight=self.DEFAULT_H)
+        dialog = CGResetDialog(self.DEFAULT_W, self.DEFAULT_H)
         if dialog.exec_():
             new_width, new_height, valid = dialog.get_data()
             if valid:
