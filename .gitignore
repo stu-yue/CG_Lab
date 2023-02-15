@@ -1,0 +1,8 @@
+# Custom files
+.DS_Store
+
+# Btye-compiled
+__pycache__/
+
+# Output dir
+output/
